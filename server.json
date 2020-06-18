@@ -1,0 +1,66 @@
+{
+  "stock": [
+    {
+      "id": 1,
+      "amount": 3
+    },
+    {
+      "id": 2,
+      "amount": 5
+    },
+    {
+      "id": 3,
+      "amount": 2
+    },
+    {
+      "id": 4,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "amount": 5
+    },
+    {
+      "id": 6,
+      "amount": 10
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "All Star Chuck Taylor Cano Alto Vermelho - Unissex",
+      "price": 179.9,
+      "image": "https://imgcentauro-a.akamaihd.net/58x58/88383306/tenis-cano-alto-converse-all-star-ct-as-core-hi-ct0004-unissex-img.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Tênis Converse All Star Chuck Taylor Plataforma Amarelo - Feminino",
+      "price": 209.9,
+      "image": "https://imgcentauro-a.akamaihd.net/500x500/93767908/tenis-converse-all-star-chuck-taylor-plataforma-feminino-img.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Tênis Converse All Star Chuck Taylor Plataforma Azul - Feminino",
+      "price": 209.9,
+      "image": "https://imgcentauro-a.akamaihd.net/500x500/93767904/tenis-converse-all-star-chuck-taylor-plataforma-feminino-img.jpg"
+    },
+    {
+      "id": 5,
+      "title": "All Star Chuck Taylor Cano Alto Azul - Unissex",
+      "price": 179.9,
+      "image": "https://imgcentauro-a.akamaihd.net/500x500/9237509E/tenis-cano-alto-converse-all-star-chuck-taylor-ct0419-unissex-img.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Tênis Converse All Star Chuck Taylor Laranja - Unissex",
+      "price": 159.9,
+      "image": "https://imgcentauro-a.akamaihd.net/500x500/92375111/tenis-converse-all-star-chuck-taylor-ct0420-unissex-img.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Tênis Cano Alto Converse All Star CT AS Core HI CT0004 Branco - Unissex",
+      "price": 179.9,
+      "image": "https://imgcentauro-a.akamaihd.net/500x500/88383301/tenis-cano-alto-converse-all-star-ct-as-core-hi-ct0004-unissex-img.jpg"
+    }
+  ]
+}
