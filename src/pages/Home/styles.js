@@ -3,9 +3,13 @@ import {darken} from 'polished';
 
 export const ProductList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   list-style: none;
+
+  @media(max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   li {
     display: flex;
