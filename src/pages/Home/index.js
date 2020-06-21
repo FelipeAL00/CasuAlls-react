@@ -1,61 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { MdShoppingCart } from 'react-icons/md';
 
+import { formatPrice } from '../../util/format';
+import api from '../../services/api';
 import { ProductList } from './styles';
-import Yellow from '../../assets/images/yellow.jpg';
-import Red from '../../assets/images/red.jpg';
-import Blue from '../../assets/images/blue.jpg';
-import Orange from '../../assets/images/orange.jpg';
 
-function Home() {
-  return (
-    <ProductList>
-      <li>
-        <img src={Yellow} alt="All Star Yellow" />
-        <strong> All Star Yellow </strong>
-        <span>R$129,90</span>
-        <button type="button">
-          <div>
-            <MdShoppingCart size={16} color="#fff" /> 3
-          </div>
-          <span> Adicionar ao carrinho </span>
-        </button>
-      </li>
-      <li>
-        <img src={Red} alt="All Star Yellow" />
-        <strong> All Star Yellow </strong>
-        <span>R$129,90</span>
-        <button type="button">
-          <div>
-            <MdShoppingCart size={16} color="#fff" /> 3
-          </div>
-          <span> Adicionar ao carrinho </span>
-        </button>
-      </li>
-      <li>
-        <img src={Blue} alt="All Star Yellow" />
-        <strong> All Star Yellow </strong>
-        <span>R$129,90</span>
-        <button type="button">
-          <div>
-            <MdShoppingCart size={16} color="#fff" /> 3
-          </div>
-          <span> Adicionar ao carrinho </span>
-        </button>
-      </li>
-      <li>
-        <img src={Orange} alt="All Star Yellow" />
-        <strong> All Star Yellow </strong>
-        <span>R$129,90</span>
-        <button type="button">
-          <div>
-            <MdShoppingCart size={16} color="#fff" /> 3
-          </div>
-          <span> Adicionar ao carrinho </span>
-        </button>
-      </li>
-    </ProductList>
-  );
+class Home extends Component {
+  state = {
+    products: [],
+  };
+
+  async componentDidMount() {
+    const response = await api.get('products');
+
+    const data = response.data.map((product) => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
+
+    this.setState({ products: data });
+  }
+
+  handleAddProduct = (product) => {
+    const { dispatch } = this.props;
+
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
+  };
+
+  render() {
+    const { products } = this.state;
+    return (
+      <ProductList>
+        {products.map((product) => (
+          <li key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <strong>{product.title}</strong>
+            <span>{product.priceFormatted}</span>
+            <button
+              type="button"
+              onClick={() => this.handleAddProduct(product)}
+            >
+              <div>
+                <MdShoppingCart size={16} color="#fff" /> 3
+              </div>
+              <span> Adicionar ao carrinho </span>
+            </button>
+          </li>
+        ))}
+      </ProductList>
+    );
+  }
 }
 
-export default Home;
+export default connect()(Home);

@@ -3,11 +3,25 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
+
+  a {
+    &:hover {
+      opacity: 0.7;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 170px;
+      margin-left: 10px;
+    }
+  }
 `;
 
 export const Cart = styled(Link)`
@@ -33,22 +47,3 @@ export const Cart = styled(Link)`
   }
 `;
 
-export const Logo = styled.div`
-  a {
-    &:hover {
-      opacity: 0.7;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-      font-size: 25px;
-    }
-
-    img {
-      width: 50px;
-      margin-left: 10px;
-    }
-  }
-`;
